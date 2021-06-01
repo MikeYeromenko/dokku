@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from dokkutest.celery import print_task
+
 # Create your views here.
 
 def index(request):
-    return HttpResponse(content=f'Works!: request.path - {request.path}')
+    text = print_task.delay()
+    return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text}')

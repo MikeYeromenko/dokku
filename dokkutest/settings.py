@@ -127,6 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # celery config
+CELERY_BROKER_URL = 'amqp://rabbitmq:5672/'
+CELERY_RESULT_BACKEND = 'amqp://rabbitmq:5672/'
 CELERY_TIMEZONE = "Australia/Tasmania"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60

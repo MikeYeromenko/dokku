@@ -20,3 +20,4 @@ app.autodiscover_tasks()
 @app.task(bind=True)
 def print_task(self):
     print(f'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Celery works!')
+    return 'Celery works!!!'
