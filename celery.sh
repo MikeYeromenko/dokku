@@ -1,3 +1,4 @@
+sudo echo 'sdfsdfsdf'
 sudo pwd
 sudo ls -a
 sudo pip freeze
