@@ -7,4 +7,4 @@ from dokkutest.celery import print_task
 
 def index(request):
     text = print_task.delay()
-    return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text}')
+    return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text}.')
