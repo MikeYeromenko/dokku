@@ -127,8 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # celery config
-CELERY_BROKER_URL = 'amqp://dokku.rabbitmq.rabbitmq:5672/'
-CELERY_RESULT_BACKEND = 'amqp://rabbitmq:5672/'
+CELERY_BROKER_URL = 'amqp://rabbitmq:377314049310c2b920b9629a0ada5960@dokku-rabbitmq-rabbitmq:5672/rabbitmq'
+CELERY_RESULT_BACKEND = 'amqp://rabbitmq:377314049310c2b920b9629a0ada5960@dokku-rabbitmq-rabbitmq:5672/rabbitmq'
 CELERY_TIMEZONE = "Australia/Tasmania"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
