@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import time
 
 from dokkutest.celery import print_task
 
@@ -8,4 +9,6 @@ from dokkutest.celery import print_task
 def index(request):
     text = print_task.delay()
     # text = 'Celery doesn\'t work:('
-    return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text.result}.')
+    while not res.ready():
+        time.sleep(1)
+    return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text.result}')
