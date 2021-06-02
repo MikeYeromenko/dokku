@@ -7,5 +7,5 @@ from dokkutest.celery import print_task
 
 def index(request):
     # text = print_task.delay()
-    text = 'Celery doesn\'t work'
+    text = 'Celery doesn\'t work:('
     return HttpResponse(content=f'Works!: request.path - {request.path}. Celery text: {text}.')
