@@ -17,6 +17,10 @@ server {
     return 301 https://$host:{{ $.PROXY_SSL_PORT }}$request_uri;
   }
 {{ else }}
+  location /flower/ {
+    proxy_pass  http://flower-5555;
+    proxy_set_header Host $http_host;
+  }
   location    / {
 
     gzip on;
