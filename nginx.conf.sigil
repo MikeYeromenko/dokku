@@ -191,9 +191,9 @@ upstream {{ $.APP }}-{{ $upstream_port }} {
 }
 
 upstream flower-5555 {
-{{ range $listeners := $.DOKKU_APP_WEB_LISTENERS | split " " }}
+{{ range $listeners := $.DOKKU_APP_FLOWER_LISTENERS | split " " }}
 {{ $listener_list := $listeners | split ":" }}
-{{ $listener_ip := index $listener_list 3 }}
+{{ $listener_ip := index $listener_list 0 }}
   server {{ $listener_ip }}:5555;{{ end }}
 }
 
